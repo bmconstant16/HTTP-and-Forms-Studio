@@ -2,6 +2,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<link rel = "stylesheet" type= "text/css" href= "styles.css"/>
 	<script>
 		// TODO: create a handler;
 		function setSearchEngine() {
@@ -21,8 +22,15 @@
 
     	window.addEventListener('load', function() {
         // TODO: register the handler
-		let formItems = document.getElementById('searchForm');
-		formItems.addEventListener('submit', setSearchEngine)
+			let formItems = document.getElementById('searchForm');
+			formItems.addEventListener('submit', function(event){
+				let textEntry = document.querySelector('input[name=q]');
+				if (textEntry === '') {
+				alert('Search term required!');
+				}
+			});
+			
+			formItems.addEventListener('submit', setSearchEngine);
 		});
 	</script>
 </head>
